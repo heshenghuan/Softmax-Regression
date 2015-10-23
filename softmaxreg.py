@@ -196,8 +196,7 @@ class SoftmaxReg:
                 grad[j] += ((1 if y==j else 0) - prb[i][self.label_set[j]]) * x
 
         J = -J/m + lamb*sum(sum(self.Theta*self.Theta))/2 
-        for j in xrang(k):
-            grad[j] = -grad[j]/m + lamb*self.Theta[j]
+        grad = -grad/m + lamb*self.Theta
 
         return J,grad
 
