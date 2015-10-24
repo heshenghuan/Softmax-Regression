@@ -217,7 +217,7 @@ class SoftmaxReg:
         X = self.__getSampleVec(sample).T
         pred = {}
         for j in range(self.classNum):
-            pred[self.label_set[j]] = np.dot(self.Theta[j,:],X)[0][0])
+            pred[self.label_set[j]] = np.dot(self.Theta[j,:],X)[0][0]
         
         return normalize(pred)
 
