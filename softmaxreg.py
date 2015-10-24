@@ -43,6 +43,12 @@ class SoftmaxReg:
         self.sample_list = []
         self.label_list = []
 
+    def printinfo(self):
+        print "sample size:      ", len(self.sample_list)
+        print "label size:       ", len(self.label_list)
+        print "label set size:   ", len(self.label_set)
+        print "feature dimension:", self.feat_dimension
+
     def saveModel(self, path=None):
         """
         Stores the model under given folder path.
@@ -256,7 +262,7 @@ def normalize(X):
     return out
 
 
-def create(self, size=0, classNum=0, label_list=None, sample_list=None):
+def create(size=0, classNum=0, label_list=None, sample_list=None):
     """
     Creates an instance of SoftmaxReg with given parameters.
 
@@ -268,6 +274,8 @@ def create(self, size=0, classNum=0, label_list=None, sample_list=None):
     tmp = SoftmaxReg()
     if tmp.loadFeatSize(size, classNum):
         # initialization successed
+        print "Initialization successed!"
     else:
         # not successed
+        print "Initialization failed! Please checked your parameters."
     return tmp
