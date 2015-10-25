@@ -1,0 +1,250 @@
+"+"!!! learn_rate=0.1
+sample size:       1934
+label size:        1934
+label set size:    10
+feature dimension: 1024
+------------------------------------------------------------
+START TRAIN BATCH:
+Iter    1    Cost:2.3026    Acc:0.1024
+Iter    2    Cost:2.7585    Acc:0.0010
+Iter    3    Cost:3.3808    Acc:0.0047
+Iter    4    Cost:4.9544    Acc:0.0341
+Iter    5    Cost:14.7648    Acc:0.0962
+Iter    6    Cost:31.6103    Acc:0.0962
+Iter    7    Cost:48.4607    Acc:0.0962
+Iter    8    Cost:65.3111    Acc:0.0962
+Iter    9    Cost:82.1615    Acc:0.0962
+Iter   10    Cost:99.0119    Acc:0.0962
+Iter   11    Cost:115.8623    Acc:0.0962
+Iter   12    Cost:132.7127    Acc:0.0962
+Iter   13    Cost:149.5631    Acc:0.0962
+Iter   14    Cost:166.4135    Acc:0.0962
+Iter   15    Cost:183.2639    Acc:0.0962
+Iter   16    Cost:200.1143    Acc:0.0962
+Iter   17    Cost:216.9647    Acc:0.0962
+Iter   18    Cost:233.8151    Acc:0.0962
+Iter   19    Cost:250.6655    Acc:0.0962
+Iter   20    Cost:267.5159    Acc:0.0962
+Iter   21    Cost:284.3663    Acc:0.0962
+Iter   22    Cost:301.2167    Acc:0.0962
+never hit the local minimum!
+
+"-"!!! learn_rate=0.1, lamb=0.0
+sample size:       1934
+label size:        1934
+label set size:    10
+feature dimension: 1024
+------------------------------------------------------------
+START TRAIN BATCH:
+Iter    1    Cost:2.3026    Acc:0.1024
+Iter    2    Cost:1.8998    Acc:0.8247
+Iter    3    Cost:1.5847    Acc:0.8862
+Iter    4    Cost:1.3443    Acc:0.9043
+Iter    5    Cost:1.1623    Acc:0.9152
+Iter    6    Cost:1.0231    Acc:0.9240
+Iter    7    Cost:0.9148    Acc:0.9286
+Iter    8    Cost:0.8290    Acc:0.9312
+Iter    9    Cost:0.7596    Acc:0.9328
+Iter   10    Cost:0.7027    Acc:0.9343
+Iter   11    Cost:0.6552    Acc:0.9369
+Iter   12    Cost:0.6150    Acc:0.9374
+Iter   13    Cost:0.5806    Acc:0.9385
+Iter   14    Cost:0.5508    Acc:0.9405
+Iter   15    Cost:0.5247    Acc:0.9411
+Iter   16    Cost:0.5018    Acc:0.9426
+Iter   17    Cost:0.4814    Acc:0.9426
+Iter   18    Cost:0.4631    Acc:0.9431
+Iter   19    Cost:0.4467    Acc:0.9436
+Iter   20    Cost:0.4318    Acc:0.9436
+Iter   21    Cost:0.4182    Acc:0.9442
+Iter   22    Cost:0.4058    Acc:0.9447
+Iter   23    Cost:0.3944    Acc:0.9452
+Iter   24    Cost:0.3839    Acc:0.9457
+Iter   25    Cost:0.3742    Acc:0.9462
+Iter   26    Cost:0.3651    Acc:0.9462
+Iter   27    Cost:0.3567    Acc:0.9462
+Iter   28    Cost:0.3488    Acc:0.9462
+Iter   29    Cost:0.3415    Acc:0.9462
+Iter   30    Cost:0.3345    Acc:0.9462
+Iter   31    Cost:0.3280    Acc:0.9478
+Iter   32    Cost:0.3219    Acc:0.9483
+Iter   33    Cost:0.3160    Acc:0.9483
+Iter   34    Cost:0.3105    Acc:0.9483
+Iter   35    Cost:0.3053    Acc:0.9493
+Iter   36    Cost:0.3003    Acc:0.9498
+Iter   37    Cost:0.2956    Acc:0.9498
+Iter   38    Cost:0.2910    Acc:0.9498
+Iter   39    Cost:0.2867    Acc:0.9514
+Iter   40    Cost:0.2826    Acc:0.9519
+Iter   41    Cost:0.2786    Acc:0.9519
+Iter   42    Cost:0.2748    Acc:0.9524
+Iter   43    Cost:0.2712    Acc:0.9535
+Iter   44    Cost:0.2677    Acc:0.9535
+Iter   45    Cost:0.2643    Acc:0.9540
+Iter   46    Cost:0.2611    Acc:0.9550
+Iter   47    Cost:0.2580    Acc:0.9550
+Iter   48    Cost:0.2550    Acc:0.9571
+Iter   49    Cost:0.2521    Acc:0.9571
+Iter   50    Cost:0.2493    Acc:0.9571
+Iter   51    Cost:0.2465    Acc:0.9571
+Iter   52    Cost:0.2439    Acc:0.9576
+Iter   53    Cost:0.2414    Acc:0.9576
+Iter   54    Cost:0.2389    Acc:0.9576
+Iter   55    Cost:0.2365    Acc:0.9576
+Iter   56    Cost:0.2342    Acc:0.9576
+Iter   57    Cost:0.2319    Acc:0.9576
+Iter   58    Cost:0.2297    Acc:0.9576
+Iter   59    Cost:0.2276    Acc:0.9576
+Iter   60    Cost:0.2255    Acc:0.9576
+Iter   61    Cost:0.2235    Acc:0.9576
+Iter   62    Cost:0.2215    Acc:0.9576
+Iter   63    Cost:0.2196    Acc:0.9576
+Iter   64    Cost:0.2178    Acc:0.9581
+Iter   65    Cost:0.2160    Acc:0.9581
+Iter   66    Cost:0.2142    Acc:0.9581
+Iter   67    Cost:0.2124    Acc:0.9586
+Iter   68    Cost:0.2108    Acc:0.9597
+Iter   69    Cost:0.2091    Acc:0.9597
+Iter   70    Cost:0.2075    Acc:0.9602
+Iter   71    Cost:0.2059    Acc:0.9607
+Iter   72    Cost:0.2044    Acc:0.9617
+Iter   73    Cost:0.2029    Acc:0.9623
+Iter   74    Cost:0.2014    Acc:0.9623
+Iter   75    Cost:0.1999    Acc:0.9623
+Iter   76    Cost:0.1985    Acc:0.9628
+Iter   77    Cost:0.1971    Acc:0.9633
+Iter   78    Cost:0.1958    Acc:0.9638
+Iter   79    Cost:0.1944    Acc:0.9643
+Iter   80    Cost:0.1931    Acc:0.9648
+Iter   81    Cost:0.1919    Acc:0.9648
+Iter   82    Cost:0.1906    Acc:0.9654
+Iter   83    Cost:0.1894    Acc:0.9654
+Iter   84    Cost:0.1882    Acc:0.9654
+Iter   85    Cost:0.1870    Acc:0.9664
+Iter   86    Cost:0.1858    Acc:0.9669
+Iter   87    Cost:0.1847    Acc:0.9669
+Iter   88    Cost:0.1835    Acc:0.9669
+Iter   89    Cost:0.1824    Acc:0.9674
+Iter   90    Cost:0.1813    Acc:0.9674
+Iter   91    Cost:0.1803    Acc:0.9674
+Iter   92    Cost:0.1792    Acc:0.9679
+Iter   93    Cost:0.1782    Acc:0.9679
+Iter   94    Cost:0.1772    Acc:0.9679
+Iter   95    Cost:0.1762    Acc:0.9685
+Iter   96    Cost:0.1752    Acc:0.9685
+Iter   97    Cost:0.1742    Acc:0.9685
+Iter   98    Cost:0.1733    Acc:0.9685
+Iter   99    Cost:0.1723    Acc:0.9685
+Iter  100    Cost:0.1714    Acc:0.9685
+Train loop has reached the maximum of iteration.
+Training process finished.
+
+"-"!!! learn_rate=0.1, lamb=1.0
+sample size:       1934
+label size:        1934
+label set size:    10
+feature dimension: 1024
+------------------------------------------------------------
+START TRAIN BATCH:
+Iter    1    Cost:2.3026    Acc:0.1024
+Iter    2    Cost:1.9214    Acc:0.8247
+Iter    3    Cost:1.6863    Acc:0.8852
+Iter    4    Cost:1.5449    Acc:0.9002
+Iter    5    Cost:1.4607    Acc:0.9126
+Iter    6    Cost:1.4100    Acc:0.9178
+Iter    7    Cost:1.3792    Acc:0.9193
+Iter    8    Cost:1.3601    Acc:0.9245
+Iter    9    Cost:1.3482    Acc:0.9302
+Iter   10    Cost:1.3406    Acc:0.9297
+Iter   11    Cost:1.3358    Acc:0.9323
+Iter   12    Cost:1.3326    Acc:0.9312
+Iter   13    Cost:1.3305    Acc:0.9333
+Iter   14    Cost:1.3291    Acc:0.9317
+Iter   15    Cost:1.3282    Acc:0.9354
+Iter   16    Cost:1.3275    Acc:0.9333
+Iter   17    Cost:1.3271    Acc:0.9354
+Iter   18    Cost:1.3267    Acc:0.9333
+Iter   19    Cost:1.3265    Acc:0.9354
+Iter   20    Cost:1.3264    Acc:0.9343
+Iter   21    Cost:1.3263    Acc:0.9354
+Iter   22    Cost:1.3262    Acc:0.9343
+Iter   23    Cost:1.3261    Acc:0.9354
+Iter   24    Cost:1.3261    Acc:0.9349
+Iter   25    Cost:1.3260    Acc:0.9354
+Iter   26    Cost:1.3260    Acc:0.9349
+Iter   27    Cost:1.3260    Acc:0.9359
+Iter   28    Cost:1.3260    Acc:0.9354
+Iter   29    Cost:1.3260    Acc:0.9359
+Iter   30    Cost:1.3260    Acc:0.9359
+Iter   31    Cost:1.3260    Acc:0.9359
+Iter   32    Cost:1.3259    Acc:0.9359
+Iter   33    Cost:1.3259    Acc:0.9359
+Iter   34    Cost:1.3259    Acc:0.9359
+Iter   35    Cost:1.3259    Acc:0.9364
+Iter   36    Cost:1.3259    Acc:0.9364
+Iter   37    Cost:1.3259    Acc:0.9364
+Iter   38    Cost:1.3259    Acc:0.9364
+Iter   39    Cost:1.3259    Acc:0.9364
+Iter   40    Cost:1.3259    Acc:0.9364
+Iter   41    Cost:1.3259    Acc:0.9369
+Iter   42    Cost:1.3259    Acc:0.9369
+Iter   43    Cost:1.3259    Acc:0.9369
+Iter   44    Cost:1.3259    Acc:0.9369
+Iter   45    Cost:1.3259    Acc:0.9369
+Iter   46    Cost:1.3259    Acc:0.9369
+Iter   47    Cost:1.3259    Acc:0.9369
+Iter   48    Cost:1.3259    Acc:0.9369
+Iter   49    Cost:1.3259    Acc:0.9369
+Iter   50    Cost:1.3259    Acc:0.9369
+Iter   51    Cost:1.3259    Acc:0.9374
+Iter   52    Cost:1.3259    Acc:0.9369
+Iter   53    Cost:1.3259    Acc:0.9374
+Iter   54    Cost:1.3259    Acc:0.9369
+Iter   55    Cost:1.3259    Acc:0.9374
+Iter   56    Cost:1.3259    Acc:0.9369
+Iter   57    Cost:1.3259    Acc:0.9374
+Iter   58    Cost:1.3259    Acc:0.9369
+Iter   59    Cost:1.3259    Acc:0.9374
+Iter   60    Cost:1.3259    Acc:0.9369
+Iter   61    Cost:1.3259    Acc:0.9374
+Iter   62    Cost:1.3259    Acc:0.9369
+Iter   63    Cost:1.3259    Acc:0.9374
+Iter   64    Cost:1.3259    Acc:0.9369
+Iter   65    Cost:1.3259    Acc:0.9374
+Iter   66    Cost:1.3259    Acc:0.9369
+Iter   67    Cost:1.3259    Acc:0.9374
+Iter   68    Cost:1.3259    Acc:0.9369
+Iter   69    Cost:1.3259    Acc:0.9374
+Iter   70    Cost:1.3259    Acc:0.9369
+Iter   71    Cost:1.3259    Acc:0.9374
+Iter   72    Cost:1.3259    Acc:0.9369
+Iter   73    Cost:1.3259    Acc:0.9374
+Iter   74    Cost:1.3259    Acc:0.9369
+Iter   75    Cost:1.3259    Acc:0.9374
+Iter   76    Cost:1.3259    Acc:0.9369
+Iter   77    Cost:1.3259    Acc:0.9374
+Iter   78    Cost:1.3259    Acc:0.9369
+Iter   79    Cost:1.3259    Acc:0.9369
+Iter   80    Cost:1.3259    Acc:0.9369
+Iter   81    Cost:1.3259    Acc:0.9369
+Iter   82    Cost:1.3259    Acc:0.9369
+Iter   83    Cost:1.3259    Acc:0.9369
+Iter   84    Cost:1.3259    Acc:0.9369
+Iter   85    Cost:1.3259    Acc:0.9369
+Iter   86    Cost:1.3259    Acc:0.9369
+Iter   87    Cost:1.3259    Acc:0.9369
+Iter   88    Cost:1.3259    Acc:0.9369
+Iter   89    Cost:1.3259    Acc:0.9369
+Iter   90    Cost:1.3259    Acc:0.9369
+Iter   91    Cost:1.3259    Acc:0.9369
+Iter   92    Cost:1.3259    Acc:0.9369
+Iter   93    Cost:1.3259    Acc:0.9369
+Iter   94    Cost:1.3259    Acc:0.9369
+Iter   95    Cost:1.3259    Acc:0.9369
+Iter   96    Cost:1.3259    Acc:0.9369
+Iter   97    Cost:1.3259    Acc:0.9369
+Iter   98    Cost:1.3259    Acc:0.9369
+Iter   99    Cost:1.3259    Acc:0.9369
+Iter  100    Cost:1.3259    Acc:0.9369
+Train loop has reached the maximum of iteration.
+Training process finished.
