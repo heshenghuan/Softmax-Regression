@@ -179,7 +179,7 @@ class SoftmaxReg:
     def __COST(self, lamb):
         """
         Cost function of SoftmaxReg,.
-        Returns the value of J(Theta) by the given sample, and gradient of 
+        Returns the value of J(Theta) by the given sample list, and gradient of 
         J(Theta).
         """
         prb = []
@@ -189,22 +189,28 @@ class SoftmaxReg:
 
         J = 0.
         grad = np.zeros(self.Theta.shape)
+        error = 0
         for i in xrange(m):
-            prb.append(self.predict(sample))
+            prb.append(self.predict(self.sample_list[i]))
             # get the predict label y
             # y.append(self.label_set.index(max(prb.items(),key=lambda a: a[1])[0]))
             label = self.label_list[i] # the label of sample[i] not the index
-            J += math.log(prb[i][label])
+            pred = prb[i].index(max(prb[i]))
+            if label != self.label_set[pred]:
+                error += 1
+            J += math.log(prb[i][self.label_set.index(label)])
 
-            x = self.__getSampleVec(sample)
-            y = self.label_set.index(label)
+            x = self.__getSampleVec(self.sample_list[i])
+            y = self.label_set.index(label) # the index of sample[i]'s label
             for j in xrange(k):
-                grad[j] += ((1 if y==j else 0) - prb[i][self.label_set[j]]) * x
+                grad[j] += ((1 if y==j else 0) - prb[i][j]) * x[0]
 
+        # compute the cost function value, gradient, and accuracy of classification
         J = -J/m + lamb*sum(sum(self.Theta*self.Theta))/2 
         grad = -grad/m + lamb*self.Theta
+        acc = 1-error/float(m)
 
-        return J,grad
+        return (J, grad, acc)
 
     def __getSampleVec(self, sample):
         """
@@ -212,7 +218,7 @@ class SoftmaxReg:
         """
         sample_vec = np.zeros((1,self.feat_dimension+1))
         for i in sample.keys():
-            sample_vec[i] = sample[i]
+            sample_vec[0][i] = sample[i]
 
         return sample_vec
 
@@ -221,11 +227,40 @@ class SoftmaxReg:
         Returns the predict vector of probabilities.
         """
         X = self.__getSampleVec(sample).T
-        pred = {}
-        for j in range(self.classNum):
-            pred[self.label_set[j]] = np.dot(self.Theta[j,:],X)[0][0]
+        pred = []
+        for j in range(self.class_num):
+            pred.append(np.dot(self.Theta[j,:],X)[0])
         
         return normalize(pred)
+        
+    def train_batch(self,  max_iter=100, learn_rate=1.0, lamb=1.0, delta=0.01):
+        """
+        Training a softmax regression model, the samples and labels should be 
+        already assigned to field self.sample_list and self.label_list.
+        
+        max_iter: the maximum number of iteration(default 100).
+        learn_rate: the learning rate of train process(default 1.0).
+        lamb: the coefficient of weight decay(default 1.0).
+        delta: the threshold of cost function value(default 0.01), and the 
+        signal of training finished.
+        """
+        print '-'*60
+        print "START TRAIN BATCH:"
+        
+        # training process
+        rd = 0
+        while rd<max_iter:
+            J, grad, acc = self.__COST(lamb)
+            self.Theta -= learn_rate * grad
+            rd+=1
+            print "Iter %4d    Cost:%4.4f    Acc:%4.4f"%(rd, J, acc)
+            if J < delta:
+                print "\n\nReach the minimal cost value threshold!"
+        
+        if rd==max_iter:
+            print "Train loop has reached the maximum of iteration."
+            
+        print "Training process finished."
 
     def read_train_file(self, filepath):
         """
@@ -245,19 +280,17 @@ class SoftmaxReg:
             self.sample_list.append(sample_vec)
         self.label_set = list(set(self.label_list))
 
-
 def normalize(X):
     """
-    Normalize the X.
-    X is a dict type.
+    Normalize the X, a list of float value.
     """
-    max_val = max(X.values())
-    out = {}
+    max_val = max(X)
+    out = []
     expsum = 0.
-    for key in X.keys():
-        out[key] = math.exp(X[key]-max_val)
+    for key in range(len(X)):
+        out.append(math.exp(X[key]-max_val))
         expsum += out[key]
-    for key in X.keys():
+    for key in range(len(X)):
         out[key] /= expsum
     return out
 
