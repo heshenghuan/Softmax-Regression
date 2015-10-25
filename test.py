@@ -9,5 +9,12 @@ http://github.com/heshenghuan
 
 import softmaxreg as sr
 
-case = sr.create(size=10,classNum=2)
+#case = sr.create(size=10,classNum=2)
+
+
+case = sr.SoftmaxReg()
+case.read_train_file(r"trainDigits.data")
+case.loadFeatSize(1024,10)
 case.printinfo()
+#print case.label_set
+case.train_batch(learn_rate=0.1,lamb=0.2)
