@@ -17,4 +17,12 @@ case.read_train_file(r"trainDigits.data")
 case.loadFeatSize(1024,10)
 case.printinfo()
 #print case.label_set
-case.train_batch(learn_rate=0.1,lamb=0.2)
+case.train_batch(learn_rate=0.1,lamb=0.0)
+
+x_test, y_test = sr.make_data(r"testDigits.data")
+
+y = case.batch_classify(x_test)
+
+acc = sr.calc_acc(y,y_test)
+print "The accuracy on testDigits:"
+print acc   
