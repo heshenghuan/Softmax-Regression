@@ -233,14 +233,14 @@ class SoftmaxReg:
         
         return normalize(pred)
         
-    def train_batch(self,  max_iter=100, learn_rate=1.0, lamb=1.0, delta=0.01):
+    def train_batch(self,  max_iter=100, learn_rate=0.1, lamb=0.1, delta=0.01):
         """
         Training a softmax regression model, the samples and labels should be 
         already assigned to field self.sample_list and self.label_list.
         
         max_iter: the maximum number of iteration(default 100).
-        learn_rate: the learning rate of train process(default 1.0).
-        lamb: the coefficient of weight decay(default 1.0).
+        learn_rate: the learning rate of train process(default 0.1).
+        lamb: the coefficient of weight decay(default 0.1).
         delta: the threshold of cost function value(default 0.01), and the 
         signal of training finished.
         """
@@ -261,6 +261,24 @@ class SoftmaxReg:
             print "Train loop has reached the maximum of iteration."
             
         print "Training process finished."
+
+    def classify(self, sample_test):
+        """Classify the sample_test, returns the most likely label."""
+        prb = self.predict(sample_test)
+        index = prb.index(max(prb))
+        label = self.label_set[index]
+        return label
+
+    def batch_classify(self, sample_test_list):
+        """
+        Doing classification for a list of sample.
+
+        Returns a list of predicted label for each test sample.
+        """
+        labels = []
+        for sample in sample_test_list:
+            labels.append(self.classify(sample))
+        return labels
 
     def read_train_file(self, filepath):
         """
@@ -294,6 +312,24 @@ def normalize(X):
         out[key] /= expsum
     return out
 
+def make_data(filepath):
+    """
+    Makes sample list and label list from file.
+    Returns a tuple of sample list and label list.
+    """
+    samples = []
+    labels = []
+    data = codecs.open(filepath, 'r')
+    for line in data.readlines():
+        val = line.strip().split('\t')
+        labels.append(val[0])
+        sample_vec = {}
+        val = val[-1].split(" ")
+        for i in range(0, len(val)):
+            [index, value] = val[i].split(':')
+            sample_vec[int(index)] = float(value)
+        samples.append(sample_vec)
+    return samples, labels
 
 def create(size=0, classNum=0, label_list=None, sample_list=None):
     """
