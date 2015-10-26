@@ -9,3 +9,5 @@ validat.data
 
 Theta.pkl
 label_set.pkl
+
+model/*
