@@ -11,6 +11,7 @@ import os
 import codecs
 import numpy as np
 import math
+import random
 from cPickle import dump
 from cPickle import load
 
@@ -233,7 +234,7 @@ class SoftmaxReg:
         
         return normalize(pred)
         
-    def train_batch(self,  max_iter=100, learn_rate=0.1, lamb=0.1, delta=0.01):
+    def train_batch(self, max_iter=100, learn_rate=0.1, lamb=0.1, delta=0.01):
         """
         Training a softmax regression model, the samples and labels should be 
         already assigned to field self.sample_list and self.label_list.
@@ -261,6 +262,68 @@ class SoftmaxReg:
             print "Train loop has reached the maximum of iteration."
             
         print "Training process finished."
+
+    def train_sgd(self, max_iter=100, learn_rate=0.01, lamb=0.1, delta=0.01):
+        """
+        Training a Softmax regression model in stochastic gradient descent
+        method.
+
+        max_iter: the maximum number of iteration(default 100).
+        learn_rate: the learning rate of train process(default 0.01).
+        lamb: the coefficient of weight decay(default 0.1).
+        delta: the threshold of cost function value(default 0.01), and the 
+        signal of training finished.
+        """
+        print '-'*60
+        print "START TRAIN SGD:"
+        # y =[]
+        m = len(self.sample_list)
+        n = self.feat_dimension + 1
+        k = len(self.label_set)
+
+        J = 0.
+        # grad = np.zeros(self.Theta.shape)
+        rd = 0
+        while rd < max_iter*m:
+            if rd%m == 0 and rd != 0:
+                loop = rd/m
+                error = 0
+                J = 0.
+                prb = []
+                for i in xrange(m):
+                    prb.append(self.predict(self.sample_list[i]))
+                    label = self.label_list[i] # the label of sample[i] not the index
+                    pred = prb[i].index(max(prb[i]))
+                    if label != self.label_set[pred]:
+                        error += 1
+                    J += math.log(prb[i][self.label_set.index(label)])
+
+                J = -J/m + lamb*sum(sum(self.Theta*self.Theta))/2
+                acc = 1-error/float(m)
+                print "Iter %4d    Cost:%4.4f    Acc:%4.4f"%(loop, J, acc)
+                if J < delta:
+                    print "\n\nReach the minimal cost value threshold!"
+                    break
+
+            i = random.randint(0,m-1)
+            label = self.label_list[i] # the label of sample[i] not the index
+            pred_prb = self.predict(self.sample_list[i])
+            pred = pred_prb.index(max(pred_prb))
+            x = self.__getSampleVec(self.sample_list[i])
+            y = self.label_set.index(label) # the index of sample[i]'s label
+            for j in xrange(k):
+                # grad[j] += ((1 if y==j else 0) - pred_prb[j]) * x[0]
+                self.Theta[j] += learn_rate * (((1 if y==j else 0) - pred_prb[j]) * x[0]-lamb*self.Theta[j])
+
+            # grad = -grad+lamb*self.Theta
+            # self.Theta -= learn_rate * grad
+            rd += 1
+
+        if rd == max_iter*m:
+            print "Train loop has reached the maximum of iteration."
+
+        print "Training process finished."
+
 
     def classify(self, sample_test):
         """Classify the sample_test, returns the most likely label."""
