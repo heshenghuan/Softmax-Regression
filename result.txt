@@ -248,3 +248,50 @@ Iter   99    Cost:1.3259    Acc:0.9369
 Iter  100    Cost:1.3259    Acc:0.9369
 Train loop has reached the maximum of iteration.
 Training process finished.
+
+MNIST:
+learn_rate = 0.01 lamb = 0.0
+
+sample size:       50000
+label size:        50000
+label set size:    10
+feature dimension: 784
+------------------------------------------------------------
+START TRAIN SGD:
+Iter    1    Cost:0.3111    Acc:0.9130
+Iter    2    Cost:0.3035    Acc:0.9147
+Iter    3    Cost:0.3001    Acc:0.9144
+Iter    4    Cost:0.2900    Acc:0.9202
+Iter    5    Cost:0.3155    Acc:0.9056
+Iter    6    Cost:0.2794    Acc:0.9213
+Iter    7    Cost:0.2726    Acc:0.9249
+Iter    8    Cost:0.2721    Acc:0.9257
+Iter    9    Cost:0.2720    Acc:0.9235
+Iter   10    Cost:0.2703    Acc:0.9245
+Iter   11    Cost:0.2688    Acc:0.9264
+Iter   12    Cost:0.2701    Acc:0.9251
+Iter   13    Cost:0.2642    Acc:0.9265
+Iter   14    Cost:0.2698    Acc:0.9238
+Iter   15    Cost:0.2721    Acc:0.9244
+Iter   16    Cost:0.2652    Acc:0.9266
+Iter   17    Cost:0.2754    Acc:0.9209
+Iter   18    Cost:0.2668    Acc:0.9257
+Iter   19    Cost:0.2821    Acc:0.9200
+Iter   20    Cost:0.2615    Acc:0.9278
+Iter   21    Cost:0.2861    Acc:0.9203
+Iter   22    Cost:0.2558    Acc:0.9309
+Iter   23    Cost:0.2554    Acc:0.9299
+Iter   24    Cost:0.2613    Acc:0.9273
+Iter   25    Cost:0.2621    Acc:0.9262
+Iter   26    Cost:0.2586    Acc:0.9275
+Iter   27    Cost:0.2532    Acc:0.9298
+Iter   28    Cost:0.2627    Acc:0.9273
+Iter   29    Cost:0.2538    Acc:0.9298
+Iter   30    Cost:0.2514    Acc:0.9296
+
+
+Reach the minimal cost value threshold!
+Training process finished.
+The accuracy on testDigits:
+0.9206
+Using default path(./).
