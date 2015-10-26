@@ -6,3 +6,6 @@ trainDigits.data
 train.data
 test.data
 validat.data
+
+Theta.pkl
+label_set.pkl

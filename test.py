@@ -13,16 +13,18 @@ import softmaxreg as sr
 
 
 case = sr.SoftmaxReg()
-case.read_train_file(r"trainDigits.data")
-case.loadFeatSize(1024,10)
+case.read_train_file(r"train.data")
+case.loadFeatSize(784,10)
 case.printinfo()
 #print case.label_set
-case.train_batch(learn_rate=0.1,lamb=0.0)
+case.train_sgd(max_iter=200,learn_rate=0.01,lamb=0.0,delta=0.2515)
 
-x_test, y_test = sr.make_data(r"testDigits.data")
+x_test, y_test = sr.make_data(r"test.data")
 
 y = case.batch_classify(x_test)
 
 acc = sr.calc_acc(y,y_test)
 print "The accuracy on testDigits:"
 print acc   
+
+case.saveModel()
