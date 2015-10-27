@@ -20,7 +20,7 @@ def calc_acc(label_list1, label_list2):
     acc = float(same.count(1))/len(same)
     return acc
 
-def sigmoid_func(x):
+def sigmoid(x):
     return 1/(1+math.exp(-x/5000))
 
 class SoftmaxReg:
@@ -77,7 +77,7 @@ class SoftmaxReg:
         self.sample_list = []
         self.label_list = []
 
-    def loadLabelset(self, label_set=None):
+    def loadLabelSet(self, label_set=None):
         """
         Loads label_set from file under given file path.
 
@@ -345,26 +345,7 @@ class SoftmaxReg:
         J = 0.
         # grad = np.zeros(self.Theta.shape)
         rd = 0
-        while rd < max_iter*m/batch_num:
-            # if (rd*batch_num)%m == 0 and rd != 0:
-            #     loop = (rd*batch_num)/m
-            #     error = 0
-            #     J = 0.
-            #     prb = []
-            #     for i in xrange(m):
-            #         prb.append(self.predict(self.sample_list[i]))
-            #         label = self.label_list[i] # the label of sample[i] not the index
-            #         pred = prb[i].index(max(prb[i]))
-            #         if label != self.label_set[pred]:
-            #             error += 1
-            #         J += math.log(prb[i][self.label_set.index(label)])
-
-            #     J = -J/m + lamb*sum(sum(self.Theta*self.Theta))/2
-            #     acc = 1-error/float(m)
-            #     print "Iter %4d    Cost:%4.4f    Acc:%4.4f"%(loop, J, acc)
-            #     if J < delta:
-            #         print "\n\nReach the minimal cost value threshold!"
-            #         break
+        while rd < max_iter:
             batch_list = []
             while len(batch_list)<batch_num:
                 index = random.randint(0, m-1)
@@ -484,10 +465,12 @@ def create(size=0, classNum=0, label_list=None, sample_list=None):
     sample_list: list of samples
     """
     tmp = SoftmaxReg()
+    tag = True
     if tmp.loadFeatSize(size, classNum):
         # initialization successed
         print "Initialization successed!"
     else:
         # not successed
+        tag = False
         print "Initialization failed! Please checked your parameters."
-    return tmp
+    return (tmp, tag)
