@@ -1,4 +1,5 @@
 softmaxreg.pyc
+test.py
 
 testDigits.data
 trainDigits.data
@@ -11,3 +12,4 @@ Theta.pkl
 label_set.pkl
 
 model/*
+training/*
