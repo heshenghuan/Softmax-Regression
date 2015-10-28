@@ -2,8 +2,8 @@
 
 ###Introduction
 > An python implementation of softmax-regression.<br>
-> Using array in numpy model to represent matrix and vector.<br>
-> In the usage, we used MNIST dataset to show you how to use this algorithm.
+> Using numpy.array model to represent matrix and vector.<br>
+> In the usage, we used [MNIST](http://yann.lecun.com/exdb/mnist/) dataset to show you how to use this algorithm.
 
 ##Data format
 The format of training and testing data file must be:<br>
@@ -23,7 +23,7 @@ Each line contains an instance and is ended by a '\n' character. \<label> and \<
 The class id should be a single character. For example, the class id can be 'B',
 'M', 'E', 'S'.
  
-\<index> is a postiveinteger denoting the feature id. The range of feature id should be from 1 to the size of feature set.
+\<index> is a postive integer denoting the feature id. The range of feature id should be from 1 to the size of feature set.
 
 - For example, the feature id is 1, 2, ... 9 or 10 if the dimension of feature set is 10. 
 
