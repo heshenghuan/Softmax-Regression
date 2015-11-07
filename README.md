@@ -1,7 +1,7 @@
 # Softmax-Regression
 
 ###Introduction
-> An python implementation of softmax-regression.<br>
+> A python implementation of softmax-regression.<br>
 > Using numpy.array model to represent matrix and vector.<br>
 > In the usage, we used [MNIST](http://yann.lecun.com/exdb/mnist/) dataset to show you how to use this algorithm.
 
