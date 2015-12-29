@@ -35,8 +35,8 @@ public:
     void load_training_file(string training_file);
     void init_omega();
     
-    int train_SGD(int max_loop, double loss_thrd, float learn_rate, int avg);
-    int train_batch(int max_loop, double loss_thrd, float learn_rate, int avg);
+    int train_SGD(int max_loop, double loss_thrd, float learn_rate, float lambda, int avg);
+    int train_batch(int max_loop, double loss_thrd, float learn_rate, float lambda, int avg);
     vector<float> calc_score(feature &samp_feat);
     vector<float> score_to_prb(vector<float> &score);
     int score_to_class(vector<float> &score);
@@ -46,8 +46,8 @@ public:
 private:
     void read_samp_file(string samp_file, vector<feature> &samp_feat_vec, vector<int> &samp_class_vec);
 
-    void update_omega(int samp_class, feature &samp_feat, float learn_rate);
-    void calc_loss(double *loss, float *acc);
+    void update_omega(int samp_class, feature &samp_feat, float learn_rate, float lambda);
+    void calc_loss(double *loss, float *acc, float lambda);
     
     float calc_acc(vector<int> &test_class_vec, vector<int> &pred_class_vec);   
     
