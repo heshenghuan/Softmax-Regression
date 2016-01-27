@@ -46,6 +46,7 @@ If they are unknown, just fill the first column with any class labels.
 #### Read training file		
 		# read training file
 		>>> case.read_train_file(r"train.data")
+		
 		# load basic information, include feature dimension and number of labels
 		# in this example, I used MNIST data. MNIST is a hand-writing digits
 		# classification problem dataset, each sample is a 28*28 image.
