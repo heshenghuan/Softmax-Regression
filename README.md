@@ -6,35 +6,37 @@
 > In the usage, we used [MNIST](http://yann.lecun.com/exdb/mnist/) dataset to show you how to use this algorithm.
 
 ## Data format
-The format of training and testing data file must be:<br>
 
-\<label> \<index1>:\<value1> \<index2>:\<value2> . . .<br>
-.<br>
-.<br>
-.<br>
+The format of training and testing data file must be:
 
-Each line contains an instance and is ended by a '\n' character. \<label> and \<index>:\<value> are sperated by a '\t' character. But \<index>:\<value> and 
-\<index>:\<value> are sperated by a ' ' character.<br>
+```
+<label> \t <index1>:<value1> <index2>:<value2> . . .
+.
+.
+.
+```
 
-\<label> is an indicator indicating the class id. Usually the indicator is an integer or a character.<br>
+Each line contains an instance and is ended by a '\n' character. `<label>` and `<index>:<value>`are sperated by a '\t' character. But `<index>:<value>` and `<index>:<value>` are sperated by a space.
 
-- Integer:<br>The range of class id should be from 0 to the size of classes subtracting one. For example, the class id is 0, 1, 2 or 3 for a 4-class classification problem.<br>
-- Character:<br>
-  The class id should be a single character. For example, the class id can be 'B',
-  'M', 'E', 'S'.
+1. `<label>` is an indicator indicating the class id. Usually the indicator is an integer or a character.
 
-\<index> is a postive integer denoting the feature id. The range of feature id should be from 1 to the size of feature set.
+   - Integer:
 
-- For example, the feature id is 1, 2, ... 9 or 10 if the dimension of feature set is 10. 
+     The range of class id should be from 0 to the size of classes subtracting one. For example, the class id is 0, 1, 2 or 3 for a 4-class classification problem.
 
-\<value> is a float denoting the value of feature.
+   - Character: 
 
+     The class id should be a single character. For example, the class id can be 'B', 'M', 'E', 'S'.
 
-If the feature value equals 0, the <index>:<value> is encourged to be neglected
-for the consideration of storage space and computational speed.
+2. `<index>` is a postive integer denoting the feature id. The range of feature id should be from 1 to the size of feature set.
 
-Labels in the testing file are only used to calculate accuracy or errors. 
-If they are unknown, just fill the first column with any class labels.
+   - For example, the feature id is 1, 2, ... 9 or 10 if the dimension of feature set is 10. 
+
+3. `<value>` is a float denoting the value of feature.
+
+   If the feature value equals 0, the `<index>:<value>` is encourged to be neglected for the consideration of storage space and computational speed.
+
+Labels in the testing file are only used to calculate accuracy or errors.  If they are unknown, just fill the first column with any class labels.
 
 ## Usage
 
